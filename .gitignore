@@ -166,6 +166,7 @@ Thumbs.db
 ##############################
 # Project Specific
 ##############################
+Firmware/lib
 Firmware/Git-GoogleDrive.ps1
 */Firmware/Git-GoogelDrive.ps1
 /Firmware/Git-GoogelDrive.ps1
