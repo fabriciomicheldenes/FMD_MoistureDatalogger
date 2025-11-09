@@ -1,0 +1,100 @@
+@startuml
+title Arquitetura Atual - Módulos C++17 (inline static)
+
+package "Hardware Layer" {
+    class MCP3008 {
+        +begin()
+        +readChannel(ch:int): int
+    }
+
+    class AdcArduino {
+        +begin()
+        +readChannel(ch:int): int
+    }
+
+    class DHT22 {
+        +begin()
+        +readTemperature(): float
+        +readHumidity(): float
+    }
+
+    class RTC1307 {
+        +begin()
+        +getFormattedDateTime(buf:char*, len:int)
+        +setDateTime(y:int, M:int, d:int, h:int, m:int, s:int)
+    }
+
+    class SDCardRW {
+        +begin()
+        +writeCSVLine(data:String)
+    }
+
+    class WiFiESP {
+        +begin()
+        +sendDataCSV(data:String)
+    }
+}
+
+package "Core" {
+    class DeviceManager {
+        +begin()
+        --
+        inline static RTC1307 rtc
+        inline static DHT22 dht
+        inline static SDCardRW sd
+        inline static WiFiESP wifi
+        inline static MCP3008 adcExternal
+        inline static AdcArduino adcInternal
+    }
+}
+
+package "Application Layer" {
+    class DataSampler {
+        +begin()
+        +update()
+        +setInterval(ms:uint32_t)
+        +enable(state:bool)
+        --
+        interval : uint32_t
+        enabled : bool
+        serial : SerialInterface*
+    }
+
+    class SerialInterface {
+        +begin()
+        +update()
+        +handleCommand(cmd:const char*)
+        +sendMessage(msg:const char*)
+        --
+        parser : CommandParser
+        adcStreaming : bool
+    }
+
+    class CommandParser {
+        +processCommand(cmd:String): String
+    }
+}
+
+package "Entry Point" {
+    class Main {
+        +main(void)
+    }
+}
+
+' Relacionamentos
+DeviceManager --> MCP3008 : gerencia
+DeviceManager --> DHT22
+DeviceManager --> RTC1307
+DeviceManager --> SDCardRW
+DeviceManager --> WiFiESP
+DeviceManager --> AdcArduino
+
+DataSampler --> DeviceManager : usa (inline)
+DataSampler --> SerialInterface : envia dados
+SerialInterface --> DataSampler : controla via comandos
+SerialInterface --> CommandParser : delega parsing
+
+Main --> DeviceManager : inicializa
+Main --> SerialInterface : loop principal
+
+@enduml

@@ -1,0 +1,168 @@
+(footprint "Crystal_DS26_D2.0mm_L6.0mm_Vertical"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(descr "DS26, Crystal, length 6.0mm, width 2mm, https://www.microcrystal.com/fileadmin/Media/Products/32kHz/Datasheet/DS-Series.pdf")
+	(property "Reference" "REF**"
+		(at -1.6764 0.2032 0)
+		(layer "F.SilkS")
+		(uuid "b63fd59a-7533-44b6-a8ff-b29f864399e7")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "32.768"
+		(at 0.95 2.2 0)
+		(layer "F.Fab")
+		(uuid "0f7adc05-e086-4309-acb1-33b50bb2594e")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" "~"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "0074eda6-39b5-479a-a7cf-6866d6b0e270")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" "Two pin crystal, small symbol"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "df5659e1-0c49-48c7-9be2-476087d09287")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr through_hole)
+	(fp_arc
+		(start 0.131 -0.749)
+		(mid 0.95 -1.11)
+		(end 1.769 -0.749)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "1da9ffb4-8745-47c1-ae84-06b696634ec4")
+	)
+	(fp_arc
+		(start 1.769 0.749)
+		(mid 0.95 1.11)
+		(end 0.131 0.749)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "9525e815-bb01-480f-a8b4-c7f4fc391271")
+	)
+	(fp_line
+		(start 0.75 -1.5)
+		(end 1.15 -1.5)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "139345f3-85db-4572-8736-c9304c27f84f")
+	)
+	(fp_line
+		(start 1.15 1.5)
+		(end 0.75 1.5)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "2524c3d6-3ed4-4917-832e-bc2e40cdc16c")
+	)
+	(fp_arc
+		(start 0.75 1.5)
+		(mid -0.75 0)
+		(end 0.75 -1.5)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "9506cfc5-4e09-42cf-9dc2-0e247ea8d487")
+	)
+	(fp_arc
+		(start 1.15 -1.5)
+		(mid 2.65 0)
+		(end 1.15 1.5)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "01b3b309-fecf-4e35-8c32-42e68bd58d82")
+	)
+	(fp_circle
+		(center 0.95 0)
+		(end 1.95 0)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "e60ac3e9-7b16-45ce-b8d1-cb024b925fdd")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0.95 0 0)
+		(layer "F.Fab")
+		(uuid "67d974fe-4d77-41d6-a3f5-13d2448d521f")
+		(effects
+			(font
+				(size 0.5 0.5)
+				(thickness 0.08)
+			)
+		)
+	)
+	(pad "1" thru_hole circle
+		(at 0 0)
+		(size 1 1)
+		(drill 0.5)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "d1b7e22d-c947-4e69-ba5b-41110000ed96")
+	)
+	(pad "2" thru_hole circle
+		(at 1.9 0)
+		(size 1 1)
+		(drill 0.5)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "6354436a-22dd-4078-8f50-bc4d2b011931")
+	)
+	(embedded_fonts no)
+	(model "${KICAD9_3DMODEL_DIR}/Crystal.3dshapes/Crystal_DS26_D2.0mm_L6.0mm_Vertical.step"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)
