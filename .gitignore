@@ -1,0 +1,175 @@
+##########################################
+# Arduino/AVR C/C++ compiled files
+##########################################
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Linker files
+*.ilk
+
+# Debugger Files
+*.pdb
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# debug information files
+*.dwo
+
+##########################################
+# KiCad backup and temporary files
+<<<<<<< HEAD
+##########################################
+=======
+>>>>>>> 3aff5ca (movido o conector de teclado)
+*.lck
+*.log
+
+*-bak
+*-backups
+*-cache*
+_autosave*
+#auto_saved_files#
+
+# KiCad project-specific settings (optional, depending on project needs)
+*.pro-user
+*.kicad_pro-user
+
+# Other common files to ignore
+# Operating system and editor specific files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+.idea/
+*.sublime-project
+*.sublime-workspace
+<<<<<<< HEAD
+Prints
+
+##########
+Labcenter Proteus
+Project Backups
+*.workspace
+
+######################################
+# C/C++ .gitignore template
+######################################
+# Compiled Object files, libraries, and executables
+*.o
+*.obj
+*.ko
+*.so
+*.lo
+*.la
+*.dll
+*.exe
+*.out
+*.app
+*.lib
+*.a
+*.ilk
+*.pdb
+*.exp
+*.map
+*.dsym
+
+# Build artifacts
+*build/
+build/
+Firmware/build/
+bin/
+obj/
+Debug/
+Release/
+x64/
+x86/
+ARM/
+MinSizeRel/
+RelWithDebInfo/
+
+# Temporary files
+*~
+*.bak
+*.swp
+*.tmp
+*.log
+*.scc
+*.user
+*.suo
+*.ncb
+*.aps
+*.bsc
+*.sbr
+*.pch
+*.idb
+*.ipch
+
+# IDE-specific files (e.g., Visual Studio, CLion, VS Code)
+*.vs/
+*.vscode/
+Firmware/.vscode/
+.vscode/
+*.idea/
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.vcproj
+*.vssscc
+*.vsscc
+*.sdf
+*.opensdf
+ipch/
+
+# CMake files
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+CTestTestfile.cmake
+_CPack_Packages/
+
+# Miscellaneous
+*.gch
+*.d
+tags
+*.DS_Store
+Thumbs.db
+
+##############################
+# Project Specific
+##############################
+Firmware/lib
+Firmware/Git-GoogleDrive.ps1
+*/Firmware/Git-GoogelDrive.ps1
+/Firmware/Git-GoogelDrive.ps1
+
+##Provisorio apagar depois
+DataSheets

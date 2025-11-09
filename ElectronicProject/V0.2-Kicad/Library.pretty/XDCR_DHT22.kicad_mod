@@ -1,0 +1,406 @@
+(footprint "XDCR_DHT22"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(property "Reference" "REF**"
+		(at 6.2484 -13.5628 0)
+		(layer "F.SilkS")
+		(uuid "ff5a57db-5f53-4d06-8e9e-42cf214f70f9")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "DHT22"
+		(at -1.45 18.195 0)
+		(layer "F.Fab")
+		(uuid "67c6d67b-ab87-4252-a087-3b7627d97820")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "16bffd25-46a6-4b60-9c2c-6a1d2cf01032")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "4e03b939-5fef-4275-8e2c-47a4ce95be1d")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "MF" "Aosong Electronics"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "e259e901-d887-47ab-a8b9-43e943b570de")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "MAXIMUM_PACKAGE_HEIGHT" "7.8 mm"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "6e9b1741-cb21-4955-a454-e6789db22f96")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "CREATOR" "KARTHIK"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "ce367d1d-f15c-49a3-8dad-4798cba1d007")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Price" "None"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "583baef5-34e9-48fa-b0d3-63daf3f0a4fe")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Package" "Package"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "33e892c6-d52f-4e15-9136-69da2f385259")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Check_prices" "https://www.snapeda.com/parts/DHT22/Aosong+Electronics/view-part/?ref=eda"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "6e044444-2332-4c4c-9103-15993d593b3f")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "STANDARD" "IPC-7351B"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "b6496026-95ba-4284-b505-0a6947d10ee2")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "SnapEDA_Link" "https://www.snapeda.com/parts/DHT22/Aosong+Electronics/view-part/?ref=snap"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "ceb0ac38-01f4-4020-80e7-5039e5b0e515")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "MP" "DHT22"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "a50ada88-fc8c-416f-b2b2-95d107085a65")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description_1" "Capacitive-type humidity and temperature module/sensor"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "a8ac4d91-0cb6-478b-a4ed-b01850de1818")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Availability" "Not in stock"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "5300e837-f1bf-4073-a0c2-e0d33c3ec672")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "MANUFACTURER" "Aosong Electronics"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "5f1ff0cd-9d22-48ef-81f5-6c7562a3fd5d")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr through_hole)
+	(fp_line
+		(start -7.7 -12.65)
+		(end -7.7 12.65)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "da7cba1c-b6c0-471b-a2bf-88b25900d068")
+	)
+	(fp_line
+		(start -7.7 12.65)
+		(end 7.7 12.65)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "b2cd0e31-0d89-42a0-976c-9a9208892096")
+	)
+	(fp_line
+		(start 7.7 -12.65)
+		(end -7.7 -12.65)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "dff3374f-fb54-445e-9c07-40dd4ecef6d0")
+	)
+	(fp_line
+		(start 7.7 12.65)
+		(end 7.7 -12.65)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "d3c64a8a-f18a-40dd-a42c-071c622c4461")
+	)
+	(fp_circle
+		(center -6.014 15.317)
+		(end -5.914 15.317)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "df2f1e26-1649-408e-b767-58bc1a5d1b22")
+	)
+	(fp_line
+		(start -7.95 -12.9)
+		(end 7.95 -12.9)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "a9c64602-1d22-4831-8c90-f5741788a5cd")
+	)
+	(fp_line
+		(start -7.95 12.9)
+		(end -7.95 -12.9)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "04e7d513-74f8-453e-839d-97308b54cc80")
+	)
+	(fp_line
+		(start 7.95 -12.9)
+		(end 7.95 12.9)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "ad531556-c872-41a6-829f-07f2ae954cb9")
+	)
+	(fp_line
+		(start 7.95 12.9)
+		(end -7.95 12.9)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "1dcd42f3-68b6-43d7-b051-0cb8faf737cf")
+	)
+	(fp_line
+		(start -7.7 -12.65)
+		(end -7.7 12.65)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "8dd1bbd3-09f4-4fc5-b34a-2be662012152")
+	)
+	(fp_line
+		(start -7.7 12.65)
+		(end 7.7 12.65)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "3bd3dc3a-8413-4223-8358-43a9730af777")
+	)
+	(fp_line
+		(start 7.7 -12.65)
+		(end -7.7 -12.65)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "e7d43641-14bb-41d6-b0c9-dbc72c2675f1")
+	)
+	(fp_line
+		(start 7.7 12.65)
+		(end 7.7 -12.65)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "957b0a9b-59e3-4102-99ea-36184e3210c8")
+	)
+	(fp_circle
+		(center -6.014 15.317)
+		(end -5.914 15.317)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "1c20f8af-603c-40af-986f-1ddad18f3607")
+	)
+	(pad "" np_thru_hole circle
+		(at 0 -9.35)
+		(size 3 3)
+		(drill 3)
+		(layers "*.Cu" "*.Mask")
+		(uuid "507acfb6-5dac-46f8-b64b-e284ec166597")
+	)
+	(pad "1" thru_hole rect
+		(at -3.81 15.19)
+		(size 1.29 1.29)
+		(drill 0.86)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(solder_mask_margin 0.102)
+		(uuid "b178c9ca-c775-4201-9f53-275e6077d5fd")
+	)
+	(pad "2" thru_hole circle
+		(at -1.27 15.19)
+		(size 1.29 1.29)
+		(drill 0.86)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(solder_mask_margin 0.102)
+		(uuid "f0b618e7-c102-492b-b627-d4d2f1274f8a")
+	)
+	(pad "3" thru_hole circle
+		(at 1.27 15.19)
+		(size 1.29 1.29)
+		(drill 0.86)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(solder_mask_margin 0.102)
+		(uuid "2e4e080b-0864-478d-af88-ccede4b6e7e1")
+	)
+	(pad "4" thru_hole circle
+		(at 3.81 15.19)
+		(size 1.29 1.29)
+		(drill 0.86)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(solder_mask_margin 0.102)
+		(uuid "625bac51-23b7-4687-acfa-60f47820a437")
+	)
+	(embedded_fonts no)
+	(model "${KIPRJMOD}/3D Models/Version 1.1 - DHT22 Temperatursensor.step"
+		(offset
+			(xyz -3.8 -12.5 2.5)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 90 -0 -0)
+		)
+	)
+)

@@ -1,0 +1,21 @@
+[submodule "Firmware/lib/lib/RTClib"]
+	path = Firmware/lib/lib/RTClib
+	url = https://github.com/adafruit/RTClib.git
+[submodule "Firmware/lib/RTClib"]
+	path = Firmware/lib/RTClib
+	url = https://github.com/adafruit/RTClib.git
+[submodule "Firmware/lib/Adafruit_BusIO"]
+	path = Firmware/lib/Adafruit_BusIO
+	url = https://github.com/adafruit/Adafruit_BusIO.git
+[submodule "Firmware/lib/DHTSensor"]
+	path = Firmware/lib/DHTSensor
+	url = https://github.com/adafruit/DHT-sensor-library.git
+[submodule "Firmware/lib/SDCard"]
+	path = Firmware/lib/SDCard
+	url = https://github.com/arduino-libraries/SD.git
+[submodule "Firmware/lib/ArduinoSTL"]
+	path = Firmware/lib/ArduinoSTL
+	url = https://github.com/mike-matera/ArduinoSTL.git
+[submodule "Firmware/lib/Adafruit_Sensor"]
+	path = Firmware/lib/Adafruit_Sensor
+	url = https://github.com/adafruit/Adafruit_Sensor.git

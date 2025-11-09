@@ -1,0 +1,1305 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "2465b45a-61bf-4bb8-9f23-f35ab1c53bad")
+	(paper "A4")
+	(lib_symbols)
+	(wire
+		(pts
+			(xy 100.33 35.56) (xy 100.33 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "04747d03-fbfc-4327-b5b9-0b3d09ed8ac0")
+	)
+	(wire
+		(pts
+			(xy 128.27 35.56) (xy 128.27 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0f98d38c-6a68-4b1b-9a93-61f3f6abb5c6")
+	)
+	(wire
+		(pts
+			(xy 143.51 52.07) (xy 144.78 52.07)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1735727c-2347-48d7-9454-52088e2c181b")
+	)
+	(wire
+		(pts
+			(xy 62.23 35.56) (xy 62.23 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "174c8b14-708c-406a-a330-407ff82eebdd")
+	)
+	(wire
+		(pts
+			(xy 118.11 35.56) (xy 118.11 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "28f4d178-1afd-4f86-b7af-5baf61394e1f")
+	)
+	(wire
+		(pts
+			(xy 105.41 35.56) (xy 105.41 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2906d0fb-2cea-4a9a-b56d-388b48240aec")
+	)
+	(wire
+		(pts
+			(xy 52.07 35.56) (xy 52.07 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "337190cb-41fa-4069-848b-b07a789c9ca8")
+	)
+	(wire
+		(pts
+			(xy 40.64 35.56) (xy 40.64 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "693902d1-0dae-4042-aaa3-d92fd24be7bd")
+	)
+	(wire
+		(pts
+			(xy 73.66 35.56) (xy 73.66 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7b11d518-3d7e-48b4-96b5-15e77e05d2a2")
+	)
+	(wire
+		(pts
+			(xy 30.48 35.56) (xy 30.48 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "848e3364-7780-446f-a292-2d9f6abb0ea4")
+	)
+	(wire
+		(pts
+			(xy 57.15 35.56) (xy 57.15 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "904f9a7f-d521-409b-95df-d8add838f4e8")
+	)
+	(wire
+		(pts
+			(xy 151.13 35.56) (xy 151.13 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9492a208-6e52-47f2-8c93-0086dc6585dd")
+	)
+	(wire
+		(pts
+			(xy 123.19 35.56) (xy 123.19 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b84db411-d04e-4a51-869e-fb5ff06eee46")
+	)
+	(wire
+		(pts
+			(xy 78.74 35.56) (xy 78.74 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c2cbf86e-76bf-4d23-9ef1-6a3062d00174")
+	)
+	(wire
+		(pts
+			(xy 95.25 35.56) (xy 95.25 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d475e51f-be7b-4f1b-bbf5-5a29117b9391")
+	)
+	(wire
+		(pts
+			(xy 146.05 35.56) (xy 146.05 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d6eb9625-df66-4c1d-a29b-b1a53c1c7ba5")
+	)
+	(wire
+		(pts
+			(xy 35.56 35.56) (xy 35.56 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dc393ce1-49dc-4e20-a5e3-6b01d587cfed")
+	)
+	(wire
+		(pts
+			(xy 140.97 35.56) (xy 140.97 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ea9e45b1-4ce1-462d-ab8a-c040bd37d94d")
+	)
+	(wire
+		(pts
+			(xy 83.82 35.56) (xy 83.82 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f95c74a6-1e7a-4cb0-a05e-727521d6969b")
+	)
+	(sheet
+		(at 72.39 72.39)
+		(size 12.7 11.43)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "0affde4b-c345-4b7d-a922-dfdc2b2a03b9")
+		(property "Sheetname" "DS1307"
+			(at 72.39 71.6784 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "DS1307.kicad_sch"
+			(at 72.39 84.4046 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "MoistureDatalogger"
+				(path "/2465b45a-61bf-4bb8-9f23-f35ab1c53bad"
+					(page "13")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 26.67 72.39)
+		(size 12.7 11.43)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "42d7dc19-7888-452c-915d-e6987a760c2a")
+		(property "Sheetname" "SDCard"
+			(at 26.67 71.6784 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "SDCard.kicad_sch"
+			(at 26.67 84.4046 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "MoistureDatalogger"
+				(path "/2465b45a-61bf-4bb8-9f23-f35ab1c53bad"
+					(page "10")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 26.67 88.9)
+		(size 12.7 11.43)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "4d95b4cd-282b-4c6b-9042-d04cf6f15a1a")
+		(property "Sheetname" "Display1602"
+			(at 26.67 88.1884 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Display1602.kicad_sch"
+			(at 26.67 100.9146 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "MoistureDatalogger"
+				(path "/2465b45a-61bf-4bb8-9f23-f35ab1c53bad"
+					(page "15")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 91.44 17.78)
+		(size 17.78 17.78)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "5421d897-df23-4bfc-9f10-4d8ee1478388")
+		(property "Sheetname" "MoistureSensor3"
+			(at 90.932 34.798 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "MoistureSensor.kicad_sch"
+			(at 104.902 42.418 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(pin "Signal1" output
+			(at 95.25 35.56 270)
+			(uuid "e8bba496-c0b9-44d8-ba2e-8fffd0c8e974")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "Signal3" output
+			(at 105.41 35.56 270)
+			(uuid "fc153cfb-0c6f-40b5-81cb-bc1fceea1e6f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "Signal2" output
+			(at 100.33 35.56 270)
+			(uuid "b7a413a3-ac2d-4b6c-bbd9-edf7792f3bb1")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(instances
+			(project "MoistureDatalogger"
+				(path "/2465b45a-61bf-4bb8-9f23-f35ab1c53bad"
+					(page "6")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 57.15 88.9)
+		(size 12.7 11.43)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "698ebbf3-ac01-49be-a51d-8057331bc81b")
+		(property "Sheetname" "TecladoNumerico"
+			(at 55.372 88.138 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "TecladoNumerico.kicad_sch"
+			(at 57.15 100.9146 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "MoistureDatalogger"
+				(path "/2465b45a-61bf-4bb8-9f23-f35ab1c53bad"
+					(page "17")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 87.63 72.39)
+		(size 12.7 11.43)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "72857ee4-b86e-47dc-845a-087f93e05d2e")
+		(property "Sheetname" "24C32A"
+			(at 87.63 71.6784 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "24C32A.kicad_sch"
+			(at 87.63 84.4046 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "MoistureDatalogger"
+				(path "/2465b45a-61bf-4bb8-9f23-f35ab1c53bad"
+					(page "14")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 26.67 17.78)
+		(size 17.78 17.78)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "814cc811-9492-4603-8a4f-d85606166275")
+		(property "Sheetname" "MoistureSensor0"
+			(at 26.162 34.798 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "MoistureSensor.kicad_sch"
+			(at 40.132 42.418 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(pin "Signal1" output
+			(at 30.48 35.56 270)
+			(uuid "084a81fe-759e-405e-a5e7-6ef829c903b3")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "Signal3" output
+			(at 40.64 35.56 270)
+			(uuid "07c79f6b-9145-4f73-be7b-b361867e137e")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "Signal2" output
+			(at 35.56 35.56 270)
+			(uuid "43defd50-6515-4e2b-9258-bf9ad73094b3")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(instances
+			(project "MoistureDatalogger"
+				(path "/2465b45a-61bf-4bb8-9f23-f35ab1c53bad"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 73.66 88.9)
+		(size 12.7 11.43)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "8184559d-1d44-4676-93e7-f9f0858e9bca")
+		(property "Sheetname" "Fonte"
+			(at 73.66 88.1884 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Fonte.kicad_sch"
+			(at 73.66 100.9146 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "MoistureDatalogger"
+				(path "/2465b45a-61bf-4bb8-9f23-f35ab1c53bad"
+					(page "18")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 48.26 17.78)
+		(size 17.78 17.78)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "887caf75-d5a4-4536-b2d3-ee205b08c70e")
+		(property "Sheetname" "MoistureSensor1"
+			(at 47.752 34.798 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "MoistureSensor.kicad_sch"
+			(at 61.722 42.418 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(pin "Signal1" output
+			(at 52.07 35.56 270)
+			(uuid "457df2d7-ecc1-4ae5-a93c-a5877e3a4840")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "Signal3" output
+			(at 62.23 35.56 270)
+			(uuid "ae4b7816-1327-41ad-bf95-3b6e3d9fa917")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "Signal2" output
+			(at 57.15 35.56 270)
+			(uuid "8dc298e6-661c-413f-b060-62aed60970d9")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(instances
+			(project "MoistureDatalogger"
+				(path "/2465b45a-61bf-4bb8-9f23-f35ab1c53bad"
+					(page "4")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 41.91 88.9)
+		(size 12.7 11.43)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "8cf3207f-b615-40a7-a7bf-1ce47fdef8ef")
+		(property "Sheetname" "Nokia5110"
+			(at 41.91 88.1884 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Nokia5110.kicad_sch"
+			(at 41.91 100.9146 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "MoistureDatalogger"
+				(path "/2465b45a-61bf-4bb8-9f23-f35ab1c53bad"
+					(page "16")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 137.16 17.78)
+		(size 17.78 17.78)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "92995c40-0032-4dc4-8e9d-3047533a487e")
+		(property "Sheetname" "MoistureSensor5"
+			(at 136.652 34.798 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "MoistureSensor.kicad_sch"
+			(at 150.622 42.418 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(pin "Signal1" output
+			(at 140.97 35.56 270)
+			(uuid "d14fb2f4-5719-4cf7-9bd1-9e650ae9ca7a")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "Signal3" output
+			(at 151.13 35.56 270)
+			(uuid "7b0487ee-da9b-48ed-aca5-e9923d1e036a")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "Signal2" output
+			(at 146.05 35.56 270)
+			(uuid "502f6be9-ad29-4fc7-aeab-71b639ad496a")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(instances
+			(project "MoistureDatalogger"
+				(path "/2465b45a-61bf-4bb8-9f23-f35ab1c53bad"
+					(page "8")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 69.85 17.78)
+		(size 17.78 17.78)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "ae45e8e8-9c2b-4975-a906-2f7c4752cbf2")
+		(property "Sheetname" "MoistureSensor2"
+			(at 69.342 34.798 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "MoistureSensor.kicad_sch"
+			(at 83.312 42.418 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(pin "Signal1" output
+			(at 73.66 35.56 270)
+			(uuid "4a39df53-64f9-4558-8168-674f569dbe0c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "Signal3" output
+			(at 83.82 35.56 270)
+			(uuid "d2aacb3a-0d28-473f-8269-b7722a37f82c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "Signal2" output
+			(at 78.74 35.56 270)
+			(uuid "4011188f-26e3-4785-b2d7-2fc61c988381")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(instances
+			(project "MoistureDatalogger"
+				(path "/2465b45a-61bf-4bb8-9f23-f35ab1c53bad"
+					(page "5")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 114.3 17.78)
+		(size 17.78 17.78)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "c04d65c9-2d53-46de-bb57-b2206c44dac7")
+		(property "Sheetname" "MoistureSensor4"
+			(at 113.792 34.798 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "MoistureSensor.kicad_sch"
+			(at 127.762 42.418 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(pin "Signal1" output
+			(at 118.11 35.56 270)
+			(uuid "9dc59b68-dee7-44f6-ab2a-0e4812312de9")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "Signal3" output
+			(at 128.27 35.56 270)
+			(uuid "d578bc93-1073-4755-977e-34465a8dacc3")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "Signal2" output
+			(at 123.19 35.56 270)
+			(uuid "68b491c1-5d6d-402a-8ab3-141716bf18b5")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(instances
+			(project "MoistureDatalogger"
+				(path "/2465b45a-61bf-4bb8-9f23-f35ab1c53bad"
+					(page "7")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 41.91 72.39)
+		(size 12.7 11.43)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "dc4f8989-8983-4906-be7d-e2c7ac9b5532")
+		(property "Sheetname" "ESP-01"
+			(at 41.91 71.6784 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "ESP-01.kicad_sch"
+			(at 41.91 84.4046 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "MoistureDatalogger"
+				(path "/2465b45a-61bf-4bb8-9f23-f35ab1c53bad"
+					(page "11")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 144.78 38.1)
+		(size 27.94 21.59)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "e4c15dcc-1a1f-4c1d-8b79-58b3189d10b6")
+		(property "Sheetname" "MCP3008"
+			(at 157.226 37.846 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "MCP3008.kicad_sch"
+			(at 144.78 60.2746 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(pin "CS_MCP3008" input
+			(at 144.78 52.07 180)
+			(uuid "4258cd7d-4724-4133-88c2-65648d62c342")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "A16" input
+			(at 146.05 38.1 90)
+			(uuid "c92d5c72-f728-4155-b757-4eea3e13eda9")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "A17" input
+			(at 151.13 38.1 90)
+			(uuid "7e26182b-e6f6-464a-a03e-62fbda50a7dd")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "MoistureDatalogger"
+				(path "/2465b45a-61bf-4bb8-9f23-f35ab1c53bad"
+					(page "9")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 26.67 38.1)
+		(size 116.84 21.59)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "e4e2320f-4177-4fe7-911e-76e1cf764298")
+		(property "Sheetname" "Microcontroller2560"
+			(at 26.162 58.166 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Microcontroller2560.kicad_sch"
+			(at 26.67 60.2746 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(pin "A7" input
+			(at 78.74 38.1 90)
+			(uuid "d609e78d-1696-48cf-8d77-855d18663d16")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "A8" input
+			(at 83.82 38.1 90)
+			(uuid "c1d1f1bd-4e11-42f2-b200-c31df5728309")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "A10" input
+			(at 100.33 38.1 90)
+			(uuid "215d56a7-6911-4dde-88a9-acc843983a5b")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "A13" input
+			(at 123.19 38.1 90)
+			(uuid "154bbcb2-e2b4-4ef7-b90f-760c062bb14f")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "A0" input
+			(at 30.48 38.1 90)
+			(uuid "72999d67-9f84-44e6-b651-a81c475b2024")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "A6" input
+			(at 73.66 38.1 90)
+			(uuid "926842d7-97e7-4c2b-9c5b-b3a9800a3aa4")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "A12" input
+			(at 118.11 38.1 90)
+			(uuid "a2b83586-343f-4f57-a81e-1218c9710e66")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "A3" input
+			(at 52.07 38.1 90)
+			(uuid "769bfeeb-767b-40cd-af7d-2a5ee85184e1")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "A4" input
+			(at 57.15 38.1 90)
+			(uuid "10b70c6d-a833-423b-a44e-af1c16eeb534")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "A1" input
+			(at 35.56 38.1 90)
+			(uuid "8e890c92-1711-4dac-9447-04b3ed0621a1")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "A9" input
+			(at 95.25 38.1 90)
+			(uuid "4f30cb3d-626d-4edc-8376-9062268c6dab")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "A5" input
+			(at 62.23 38.1 90)
+			(uuid "5e46a281-36bc-429d-a267-16e0511d3744")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "A11" input
+			(at 105.41 38.1 90)
+			(uuid "59c0ba52-2b48-43df-aee5-53657c716ac8")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "A14" input
+			(at 128.27 38.1 90)
+			(uuid "8a62c899-de18-4a8f-b392-a8ebca177b91")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "A2" input
+			(at 40.64 38.1 90)
+			(uuid "f68b01dc-8c0c-4dde-99bd-fe318b5d469e")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "A15" input
+			(at 140.97 38.1 90)
+			(uuid "f3c80cd2-27f9-4933-8a3a-dc5a5862a52c")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(pin "CS_MCP3008" input
+			(at 143.51 52.07 0)
+			(uuid "df4f851e-c933-4043-bb06-921624741ff7")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(instances
+			(project "MoistureDatalogger"
+				(path "/2465b45a-61bf-4bb8-9f23-f35ab1c53bad"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 57.15 72.39)
+		(size 12.7 11.43)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "f06c3242-5aa0-450f-adaf-bd55866769ae")
+		(property "Sheetname" "DHT22"
+			(at 57.15 71.6784 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "DHT22.kicad_sch"
+			(at 57.15 84.4046 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+				(hide yes)
+			)
+		)
+		(instances
+			(project "MoistureDatalogger"
+				(path "/2465b45a-61bf-4bb8-9f23-f35ab1c53bad"
+					(page "12")
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)

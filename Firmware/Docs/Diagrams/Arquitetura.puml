@@ -1,0 +1,126 @@
+@startuml MoistureDatalogger_ClassDiagram
+title Moisture Datalogger – Diagrama de Classes e Relações
+
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam class {
+    BackgroundColor White
+    BorderColor #444
+}
+
+' ============ Núcleo do Sistema ============
+package "Core" {
+    class SerialInterface {
+        -HardwareSerial& serialPort
+        -CommandParser parser
+        -CallbackFn callback
+        -uint32_t baud
+        +SerialInterface(HardwareSerial&, uint32_t)
+        +begin()
+        +setCallback(CallbackFn)
+        +handleCommand(const char&)
+        +handleCommand(const String&)
+        +sendMessage(const String&)
+    }
+
+    class CommandParser {
+        +processCommand(const String&) : CommandResult
+    }
+
+    class CommandResult {
+        +CommandType type
+        +String message
+        +String deviceTarget
+        +String args
+    }
+
+    class SystemMediator {
+        -SerialInterface* serialInterface
+        -static SystemMediator* instancePtr
+        +SystemMediator(SerialInterface*)
+        +handleCommand(const CommandResult&)
+        +generateSaveLine()
+        +sendMessage(const String&)
+        +setInstance(SystemMediator*)
+    }
+
+    class DeviceManager {
+        -static ISensor* devices[MAX_DEVICES]
+        -static uint8_t deviceCount
+        +registerDevices()
+        +getDevice(const String&) : ISensor*
+        +getDeviceAt(uint8_t) : ISensor*
+        +getDeviceCount() : uint8_t
+        +begin()
+        +printAllStatus()
+    }
+
+    interface ISensor {
+        +begin()
+        +isAvailable() : bool
+        +getDeviceName() : const char*
+        +printStatus() const
+        +response()
+        +getData(SensorData&)
+        +logLine() : String
+    }
+
+    class SensorData {
+        +float numeric[4]
+        +String text[2]
+        +uint8_t numericCount
+        +uint8_t textCount
+    }
+}
+
+' ============ Drivers ============
+package "Drivers" {
+    class DHTController {
+        -DHT dht
+        -uint8_t dhtPin
+        -uint8_t dhtType
+        +getData(SensorData&)
+        +response()
+        +logLine() : String
+    }
+
+    class RTC1307Controller {
+        -RTC_DS1307 rtc
+        +getData(SensorData&)
+        +setDateTime(const String&)
+        +getFormattedDate(char*, char*)
+    }
+
+    class AdcChannelSensor {
+        -uint8_t channel
+        -const char* sensorName
+        +getData(SensorData&)
+        +logLine() : String
+        +response()
+    }
+}
+
+' ============ Aplicação ============
+package "App" {
+    class MoistureDatalogger {
+        -SerialInterface serialInterface
+        -SystemMediator systemMediator
+        +setup()
+        +loop()
+        +main()
+    }
+}
+
+' ============ Relações ============
+MoistureDatalogger --> SerialInterface : usa
+MoistureDatalogger --> SystemMediator : coordena
+SerialInterface --> CommandParser : contém
+SerialInterface --> SystemMediator : callback
+SystemMediator --> DeviceManager : consulta
+SystemMediator --> ISensor : executa operações
+DeviceManager --> ISensor : registra e fornece
+ISensor <|.. DHTController
+ISensor <|.. RTC1307Controller
+ISensor <|.. AdcChannelSensor
+
+@enduml

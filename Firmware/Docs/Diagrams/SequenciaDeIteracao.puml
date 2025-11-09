@@ -1,0 +1,158 @@
+@startuml MoistureDatalogger_Arquitetura_Classe_v0_4_1
+title Moisture Datalogger – Arquitetura de Classes (v0.4.1)
+
+skinparam componentStyle rectangle
+skinparam shadowing false
+skinparam packageStyle rectangle
+skinparam rectangle {
+  BackgroundColor<<app>> #F0F9F0
+  BackgroundColor<<core>> #FDF6E3
+  BackgroundColor<<drivers>> #E6F7FF
+  BorderColor #555555
+}
+
+package "App" <<app>> {
+    class "MoistureDatalogger (app.cpp)" as APP {
+        +setup()
+        +loop()
+        +main()
+        --
+        -SerialInterface serialInterface
+        -SystemMediator systemMediator
+    }
+}
+
+package "Core" <<core>> {
+    class SerialInterface {
+        +begin()
+        +handleCommand(cmd)
+        +sendMessage(msg)
+        -CommandParser parser
+        -CallbackFn callback
+    }
+
+    class CommandParser {
+        +processCommand(cmd) : CommandResult
+    }
+
+    class SystemMediator {
+        +handleCommand(result)
+        +generateSaveLine()
+        +sendMessage(msg)
+        +setInstance(ptr)
+        -SerialInterface* serialInterface
+    }
+
+    class DeviceManager {
+        +begin()
+        +registerDevices()
+        +getDevice(name)
+        +getDeviceAt(index)
+        +getDeviceCount()
+        +printAllStatus()
+        -ISensor* devices[MAX_DEVICES]
+    }
+
+    interface ISensor {
+        +begin()
+        +isAvailable() : bool
+        +getDeviceName() : const char*
+        +response()
+        +getData(out : SensorData)
+        +logLine() : String
+    }
+
+    class SensorData {
+        float numeric[4]
+        String text[2]
+        uint8_t numericCount
+        uint8_t textCount
+    }
+}
+
+package "Drivers" <<drivers>> {
+    class RTC1307Controller {
+        +getData(SensorData&)
+        +setDateTime()
+        +response()
+    }
+    class DHTController {
+        +getData(SensorData&)
+        +response()
+    }
+    class AdcChannelSensor {
+        +getData(SensorData&)
+        +logLine()
+        +response()
+    }
+}
+
+' Relações
+APP --> SerialInterface : inicializa e usa
+APP --> SystemMediator : agenda generateSaveLine()
+SerialInterface --> CommandParser : usa
+SerialInterface --> SystemMediator : callback chama
+SystemMediator --> DeviceManager : consulta sensores
+SystemMediator --> ISensor : executa response()/getData()
+DeviceManager --> ISensor : registra/retorna
+ISensor <|.. DHTController
+ISensor <|.. RTC1307Controller
+ISensor <|.. AdcChannelSensor
+@enduml
+
+
+@startuml MoistureDatalogger_FluxoSerial_v0_4_1
+title Fluxo de Comandos via Serial (v0.4.1)
+
+actor Usuario
+participant "app.cpp" as APPSEQ
+participant "SerialInterface" as SI
+participant "CommandParser" as CP
+participant "SystemMediator" as SM
+participant "DeviceManager" as DM
+participant "ISensor" as IS
+
+Usuario -> APPSEQ : Envia texto pela Serial
+APPSEQ -> SI : handleCommand(cmd)
+SI -> CP : processCommand(cmd)
+CP --> SI : CommandResult{type, deviceTarget}
+SI -> SM : handleCommand(result)
+SM -> DM : getDevice(deviceTarget)
+DM --> SM : ISensor*
+SM -> IS : response()
+IS -> SI : saída formatada
+SI -> Usuario : escreve na Serial
+@enduml
+
+
+@startuml MoistureDatalogger_SequenciaLog_v0_4_1
+title Sequência de Leitura e Geração de Log (v0.4.1)
+
+participant "app.cpp" as APP2
+participant "SystemMediator" as SM2
+participant "DeviceManager" as DM2
+participant "RTC1307Controller" as RTC
+participant "DHTController" as DHT
+participant "AdcChannelSensor[n]" as ADC
+participant "SerialInterface" as SERIAL
+
+APP2 -> SM2 : generateSaveLine()
+
+SM2 -> DM2 : getDevice("RTC1307")
+DM2 --> SM2 : RTC
+SM2 -> RTC : getData(rtcData)
+RTC --> SM2 : data/hora
+
+SM2 -> DM2 : getDevice("DHT22")
+DM2 --> SM2 : DHT
+SM2 -> DHT : getData(dhtData)
+DHT --> SM2 : umidade/temperatura
+
+loop para cada canal ADC registrado
+    SM2 -> DM2 : getDevice("ADC_CHi")
+    DM2 --> SM2 : ADC
+    SM2 -> ADC : getData(adcData)
+    ADC --> SM2 : valor analógico[i]
+    SM2 -> SERIAL : print("save;3;data;hora;i;adc;umid;temp")
+end
+@enduml
