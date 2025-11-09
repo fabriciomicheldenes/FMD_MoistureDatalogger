@@ -19,3 +19,6 @@
 [submodule "Firmware/lib/Adafruit_Sensor"]
 	path = Firmware/lib/Adafruit_Sensor
 	url = https://github.com/adafruit/Adafruit_Sensor.git
+[submodule "Firmware/lib/Adafruit_MCP3008"]
+	path = Firmware/lib/Adafruit_MCP3008
+	url = https://github.com/adafruit/Adafruit_MCP3008.git
