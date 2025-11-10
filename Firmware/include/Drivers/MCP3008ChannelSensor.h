@@ -25,16 +25,29 @@
  */
 
 #pragma once
+#include <Adafruit_MCP3008.h>
 #include <Arduino.h>
 #include <SPI.h>
+#include "Core/ISensor.h"
 #include "HardwarePins.h"
 
-class MCP3008Controller {
+class Mcp3008ChannelSensor : public ISensor {
    public:
-    explicit MCP3008Controller(uint8_t csPin);
-    void begin();
-    uint16_t readChannel(uint8_t channel);
+    Mcp3008ChannelSensor() {};
+    explicit Mcp3008ChannelSensor(uint8_t csPin, uint8_t channel, const char* name);
+
+    void begin() override;
+    bool isAvailable() const override;
+    const char* getDeviceName() const override;
+    void printStatus() const override;
+    void response() override;
+    void getData(SensorData& out) override;
+    void appendToLogLine(String& line) override;
+    String logLine() override;
 
    private:
     uint8_t _csPin;
+    uint8_t _channel;
+    const char* _sensorName;
+    Adafruit_MCP3008 mcp;
 };

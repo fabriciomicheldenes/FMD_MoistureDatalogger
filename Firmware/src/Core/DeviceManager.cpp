@@ -68,6 +68,11 @@ void DeviceManager::registerDevices() {
         devices[deviceCount++] = &adcChannels[i];
     }
 
+    // Registra os canais ADC do MPC3008
+    for (uint8_t i = 0; i < 2; i++) {
+        devices[deviceCount++] = &mcpChannels[i];
+    }
+
     devices[deviceCount++] = &dht;
 
     // devices[deviceCount++] = &sd; placeholder

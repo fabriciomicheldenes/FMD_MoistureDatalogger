@@ -39,10 +39,11 @@
 #include "Core/ISensor.h"
 #include "Drivers/AdcChannelSensor.h"
 #include "Drivers/DHTController.h"
+#include "Drivers/MCP3008ChannelSensor.h"
 #include "Drivers/RTC1307Controller.h"
 #include "HardwarePins.h"
 
-#define MAX_DEVICES 32  
+#define MAX_DEVICES 32
 constexpr int DHT_TYPE = 22;
 
 class DeviceManager {
@@ -57,10 +58,13 @@ class DeviceManager {
 
    private:
     inline static RTC1307Controller rtc{};
-
     inline static DHTController dht{HardwarePins::DHT_PIN, DHT_TYPE};
 
-    // const char name[9] = "ADC";
+    inline static Mcp3008ChannelSensor mcpChannels[8] = {
+        Mcp3008ChannelSensor(HardwarePins::CS_MCP3008, 0, "MCP_CH0"),
+        Mcp3008ChannelSensor(HardwarePins::CS_MCP3008, 1, "MCP_CH1")};
+
+    // inline static Mcp3008ChannelSensor mcp_ch0{HardwarePins::CS_MCP3008, 0, "MCP_CH0"};
 
     inline static AdcChannelSensor adcChannels[16] = {
         AdcChannelSensor(HardwarePins::ADC0_PIN, "ADC_CH1"),

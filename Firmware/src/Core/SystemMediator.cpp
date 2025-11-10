@@ -88,18 +88,17 @@ void SystemMediator::sendMessage(const String& msg) {
 void SystemMediator::generateSaveLine() {
     String line;
     line.reserve(128);
-    
-    line = "3;"; // TODO: ID do datalogger, fixo para teste - placeholder
+
+    line = "3;";  // TODO: ID do datalogger, fixo para teste - placeholder
 
     Serial.print(F("Quantidade de dispositivos: "));
     Serial.println(DeviceManager::getDeviceCount());
 
     for (uint8_t i = 0; i < DeviceManager::getDeviceCount(); ++i) {
-        
         ISensor* sensor = DeviceManager::getDeviceAt(i);
         sensor->appendToLogLine(line);
     }
 
-    line += "SDCard;"; // TODO: Indicar que dado foi salvo no sdcard antes de enviar para serial
+    line += "SDCard;";  // TODO: Indicar que dado foi salvo no sdcard antes de enviar para serial
     Serial.println(line);
 }

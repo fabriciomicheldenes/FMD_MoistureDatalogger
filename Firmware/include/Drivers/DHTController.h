@@ -32,7 +32,7 @@
 
 class DHTController : public ISensor {
    public:
-    DHTController(uint8_t pin, uint8_t type = DHT22);
+    explicit DHTController(uint8_t pin, uint8_t type = DHT22);
 
     void begin() override;
     bool isAvailable() const override;

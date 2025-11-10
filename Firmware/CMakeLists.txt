@@ -2,9 +2,10 @@ cmake_minimum_required(VERSION 3.16)
 
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
-if (WIN32)
+if(WIN32)
     set(CMAKE_COLOR_MAKEFILE ON)
 endif()
+
 add_compile_options(-fdiagnostics-color=always)
 
 set(CMAKE_TRY_COMPILE_TARGET_TYPE STATIC_LIBRARY)
@@ -14,7 +15,7 @@ set(FIRMWARE_NAME ${PROJECT_NAME})
 # ===============================================================
 # 🔧 Configura toolchain AVR
 # ===============================================================
-if (NOT CMAKE_TOOLCHAIN_FILE)
+if(NOT CMAKE_TOOLCHAIN_FILE)
     set(CMAKE_TOOLCHAIN_FILE "${CMAKE_SOURCE_DIR}/cmake/avr-toolchain.cmake" CACHE FILEPATH "" FORCE)
 endif()
 
@@ -50,6 +51,7 @@ set(Adafruit_BusIO_PATH "${CMAKE_SOURCE_DIR}/lib/Adafruit_BusIO")
 set(DHTSensor_PATH "${CMAKE_SOURCE_DIR}/lib/DHTSensor")
 set(SDCard_PATH "${CMAKE_SOURCE_DIR}/lib/SDCard/src")
 set(Adafruit_Sensor_PATH "${CMAKE_SOURCE_DIR}/lib/Adafruit_Sensor")
+set(Adafruit_MCP3008_PATH "${CMAKE_SOURCE_DIR}/lib/Adafruit_MCP3008")
 
 # Diretórios de include unificados
 include_directories(
@@ -70,6 +72,7 @@ include_directories(
     "${SDCard_PATH}"
     "${SDCard_PATH}/utility"
     "${Adafruit_Sensor_PATH}"
+    "${Adafruit_MCP3008_PATH}"
 )
 
 # Fontes do core Arduino
@@ -112,6 +115,9 @@ file(GLOB SDCard_SRC
 file(GLOB Adafruit_Sensor_SRC
     "${Adafruit_Sensor_PATH}/*.cpp"
 )
+file(GLOB Adafruit_MCP3008_SRC
+    "${Adafruit_MCP3008_PATH}/*.cpp"
+)
 
 # Remove o main.cpp duplicado do core
 list(FILTER ARDUINO_CORE_SRC EXCLUDE REGEX ".*/main\\.cpp$")
@@ -133,30 +139,32 @@ file(GLOB_RECURSE SRC_FILES
 )
 
 add_executable(${FIRMWARE_NAME}.elf
-    #Sources do projeto
+
+    # Sources do projeto
     ${SRC_FILES}
 
-    #Sources do Arduino Core
+    # Sources do Arduino Core
     ${ARDUINO_CORE_SRC}
 
-    #Sources das libs nativas Arduino
+    # Sources das libs nativas Arduino
     ${ARDUINO_LIB_SPI_SRC}
     ${ARDUINO_LIB_WIRE_SRC}
     ${ARDUINO_LIB_SoftSerial_SRC}
 
-    #Sources das libs externas
+    # Sources das libs externas
     ${RTCLIB_SRC}
     ${Adafruit_BusIO_SRC}
     ${DHTSensor_SRC}
     ${SDCard_SRC}
     ${Adafruit_Sensor_SRC}
+    ${Adafruit_MCP3008_SRC}
 )
 
 # Define macros do Arduino
 target_compile_definitions(${FIRMWARE_NAME}.elf PRIVATE
-    ARDUINO=10819           # Versão do Arduino IDE (simulada)
-    ARDUINO_AVR_MEGA2560   # Board específico
-    ARDUINO_ARCH_AVR       # Arquitetura
+    ARDUINO=10819 # Versão do Arduino IDE (simulada)
+    ARDUINO_AVR_MEGA2560 # Board específico
+    ARDUINO_ARCH_AVR # Arquitetura
 )
 
 target_compile_options(${FIRMWARE_NAME}.elf PRIVATE
@@ -166,14 +174,14 @@ target_compile_options(${FIRMWARE_NAME}.elf PRIVATE
     -Wall -Wextra
     -ffunction-sections
     -fdata-sections
-    -fno-exceptions        # Desabilita exceções C++ (economia de memória)
+    -fno-exceptions # Desabilita exceções C++ (economia de memória)
     -fno-threadsafe-statics # Desabilita thread-safe para static (economia de memória)
 )
 
 target_link_options(${FIRMWARE_NAME}.elf PRIVATE
     -mmcu=${MCU}
     -Wl,--gc-sections
-    -lm                    # Biblioteca matemática
+    -lm # Biblioteca matemática
 )
 
 # ===============================================================
@@ -197,14 +205,14 @@ add_custom_command(TARGET ${FIRMWARE_NAME}.elf POST_BUILD
 find_program(AVRDUDE avrdude)
 
 # 2. Caso não encontrado, tenta nos locais padrão do Arduino IDE
-if (NOT AVRDUDE)
+if(NOT AVRDUDE)
     # Caminho do Arduino IDE 1.x
-    if (EXISTS "C:/Program Files (x86)/Arduino/hardware/tools/avr/bin/avrdude.exe")
+    if(EXISTS "C:/Program Files (x86)/Arduino/hardware/tools/avr/bin/avrdude.exe")
         set(AVRDUDE "C:/Program Files (x86)/Arduino/hardware/tools/avr/bin/avrdude.exe")
     endif()
 
     # Caminho do Arduino IDE 2.x
-    if (EXISTS "$ENV{USERPROFILE}/AppData/Local/Arduino15/packages/arduino/tools/avrdude/6.3.0-arduino17/bin/avrdude.exe")
+    if(EXISTS "$ENV{USERPROFILE}/AppData/Local/Arduino15/packages/arduino/tools/avrdude/6.3.0-arduino17/bin/avrdude.exe")
         set(AVRDUDE "$ENV{USERPROFILE}/AppData/Local/Arduino15/packages/arduino/tools/avrdude/6.3.0-arduino17/bin/avrdude.exe")
     endif()
 endif()
@@ -215,10 +223,10 @@ endif()
 # Porta serial do Arduino
 set(ARDUINO_PORT "COM4" CACHE STRING "Porta serial para upload AVR")
 
-if (AVRDUDE)
+if(AVRDUDE)
     add_custom_target(upload
         COMMAND "${AVRDUDE}" -v -p m2560 -c wiring -P ${ARDUINO_PORT} -b 115200 -D
-                -U flash:w:${FIRMWARE_NAME}.hex:i
+        -U flash:w:${FIRMWARE_NAME}.hex:i
         DEPENDS ${FIRMWARE_NAME}.elf
         COMMENT "🚀 Gravando firmware no Arduino Mega 2560 via ${ARDUINO_PORT}"
     )
