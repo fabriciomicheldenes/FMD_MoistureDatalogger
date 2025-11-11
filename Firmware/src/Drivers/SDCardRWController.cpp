@@ -24,39 +24,51 @@
  * * v0.2.x  - Em desenvolvimento
  */
 
-#include "drivers/SDCardRWController.h"
+#include "Drivers/SDCardRWController.h"
 
-SDCardRWController::SDCardRWController(uint8_t csPin) : chipSelect(csPin) {}
-
-bool SDCardRWController::begin() {
-    if (!SD.begin(chipSelect)) {
-        Serial.println(F("❌ Falha ao inicializar SD!"));
-        return initialized;
+void SDCardRWController::begin() {
+    if (!SD.begin(cs)) {
+        initialized = false;
+        lastErrorMsg = F("Init failed");
+        Serial.println(F("❌ Falha ao inicializar o SDCard."));
+    } else {
+        initialized = true;
+        lastErrorMsg = F("OK");
+        Serial.println(F("🟢 SDCard inicializado com sucesso."));
     }
-    logFile = SD.open(filename, FILE_WRITE);
-    if (!logFile) {
-        Serial.println(F("❌ Falha ao abrir arquivo de log!"));
+}
+
+void SDCardRWController::printStatus() const {
+    Serial.print(F("[SDCard] Status: "));
+    Serial.println(initialized ? F("OK") : F("FALHA"));
+}
+
+bool SDCardRWController::appendCSV(const String& dataLine, bool verbose) {
+    if (!initialized) {
+        if (verbose)
+            Serial.println(F("⚠️ SDCard não inicializado."));
+        lastErrorMsg = F("not_ready");
         return false;
     }
-    logFile.println(F("timestamp;adc0;adc1;...;temp;hum"));
-    logFile.flush();
-    Serial.println(F("✅ SDCard inicializado."));
-    return true;
-}
 
-bool SDCardRWController::appendCSV(const String& dataLine) {
-    if (!logFile)
+    File file = SD.open(filename, FILE_WRITE);
+    if (!file) {
+        lastErrorMsg = F("open_fail");
+        if (verbose)
+            Serial.println(F("❌ Falha ao abrir arquivo para escrita."));
         return false;
-    logFile.println(dataLine);
-    logFile.flush();
-    return true;
-}
+    }
 
-void SDCardRWController::close() {
-    if (logFile)
-        logFile.close();
-}
+    bool success = file.println(dataLine);
+    file.close();
 
-bool SDCardRWController::isReady() const {
-    return initialized;
+    if (success) {
+        lastErrorMsg = F("OK");
+        return true;
+    } else {
+        lastErrorMsg = F("write_fail");
+        if (verbose)
+            Serial.println(F("❌ Falha ao escrever no SDCard."));
+        return false;
+    }
 }

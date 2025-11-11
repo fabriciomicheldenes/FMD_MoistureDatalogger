@@ -99,6 +99,19 @@ void SystemMediator::generateSaveLine() {
         sensor->appendToLogLine(line);
     }
 
-    line += "SDCard;";  // TODO: Indicar que dado foi salvo no sdcard antes de enviar para serial
+    bool saved = false;
+
+    auto* service = DeviceManager::getService("SDCard");
+    if (service && service->isReady()) {
+        auto* sd = static_cast<SDCardRWController*>(service);
+        saved = sd->appendCSV(line);
+    }
+
+    line += saved ? F(";SD=OK") : F(";SD=ERR");
+    // serialInterface->sendMessage(line);
+
+    // line += "SDCard;";  // TODO: Indicar que dado foi salvo no sdcard antes de enviar para serial
+
+
     Serial.println(line);
 }

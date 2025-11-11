@@ -73,7 +73,7 @@ class HardwarePins {
     // --------------------------------------------------
     // 💾 SD Card (SPI)
     // --------------------------------------------------
-    static constexpr uint8_t CS_SDCARD = 4;  // Chip Select do módulo SD
+    static constexpr uint8_t CS_SDCARD = 44;  // Chip Select do módulo SD
 
     // --------------------------------------------------
     // 📡 Módulo Wi-Fi ESP-01 (UART)

@@ -28,8 +28,8 @@
 #include <Arduino.h>
 #include "CommandParser.h"
 
-class DHTController;
-class RTC1307Controller;
+// class DHTController;
+// class RTC1307Controller;
 class SerialInterface;
 
 class SystemMediator {
