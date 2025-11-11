@@ -37,26 +37,41 @@
 #pragma once
 #include "Core/DeviceManager.h"
 #include "Core/ISensor.h"
+#include "Core/ISystemService.h"
 #include "Drivers/AdcChannelSensor.h"
 #include "Drivers/DHTController.h"
 #include "Drivers/MCP3008ChannelSensor.h"
 #include "Drivers/RTC1307Controller.h"
+#include "Drivers/SDCardRWController.h"
 #include "HardwarePins.h"
 
 #define MAX_DEVICES 32
+#define MAX_SERVICES 4
 constexpr int DHT_TYPE = 22;
 
 class DeviceManager {
    public:
     static void registerDevices();
+    static void registerServices();
     static void begin();
     static void printAllStatus();
     static ISensor* getDevice(const String& name);
+    static ISystemService* getService(const char* name);
     static ISensor* getDeviceAt(uint8_t index);
     static uint8_t getDeviceCount();
+    static uint8_t getServiceCount();
     static void listDevices();
+    static SDCardRWController* getSDController() { return &sdController; }
+    static bool updateDevices() {
+        Serial.println(F("[DeviceManager] Atualizando dispositivos..."));
+        // if (!sdController.isReady())
+            sdController.updateSDCard();
+        // futuramente: wifi.update(), rtc.update(), etc.
+        return true;
+    }
 
    private:
+    inline static SDCardRWController sdController{HardwarePins::CS_SDCARD};
     inline static RTC1307Controller rtc{};
     inline static DHTController dht{HardwarePins::DHT_PIN, DHT_TYPE};
 
@@ -85,5 +100,7 @@ class DeviceManager {
         AdcChannelSensor(HardwarePins::ADC15_PIN, "ADC_CH16")};
 
     inline static ISensor* devices[MAX_DEVICES] = {nullptr};
+    inline static ISystemService* services[MAX_SERVICES] = {nullptr};
     inline static uint8_t deviceCount = 0;
+    inline static uint8_t serviceCount = 0;
 };

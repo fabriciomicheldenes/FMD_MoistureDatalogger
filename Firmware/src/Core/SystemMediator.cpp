@@ -86,6 +86,7 @@ void SystemMediator::sendMessage(const String& msg) {
  * @brief Gera uma linha unificada de log iterando sobre todos os sensores registrados.
  */
 void SystemMediator::generateSaveLine() {
+    auto* sd = DeviceManager::getSDController();
     String line;
     line.reserve(128);
 
@@ -99,6 +100,17 @@ void SystemMediator::generateSaveLine() {
         sensor->appendToLogLine(line);
     }
 
-    line += "SDCard;";  // TODO: Indicar que dado foi salvo no sdcard antes de enviar para serial
+    bool saved = false;
+
+    auto* service = DeviceManager::getService("SDCard");
+    if (service && service->isReady()) {
+        sd->blinkStart();  // 50% duty antes do envio
+        auto* sd = static_cast<SDCardRWController*>(service);
+        saved = sd->appendCSV(line);
+        sd->blinkEnd();
+    }
+
+    line += saved ? F(";SD=OK") : F(";SD=ERR");
+    // serialInterface->sendMessage(line)
     Serial.println(line);
 }

@@ -1,5 +1,6 @@
 /**
- * * @file SystemMediator.h
+ * * @file CommandParser.cpp
+
  * TODO: @brief <TODO: Descrição breve do propósito do arquivo>
  *
  * @details
@@ -26,23 +27,26 @@
 
 #pragma once
 #include <Arduino.h>
-#include "CommandParser.h"
 
-// class DHTController;
-// class RTC1307Controller;
-class SerialInterface;
-
-class SystemMediator {
+/**
+ * @brief Interface base para serviços de sistema (SDCard, WiFi, etc.)
+ *
+ * Define métodos mínimos para inicialização e diagnóstico de periféricos
+ * que não são sensores, mas que fornecem funcionalidades de suporte.
+ */
+class ISystemService {
    public:
-    SystemMediator(SerialInterface* serialIf) : serialInterface(serialIf) {}
+    virtual ~ISystemService() = default;
 
-    static void handleCommandStatic(const CommandResult& result);
-    static void setInstance(SystemMediator* inst) { instancePtr = inst; }
-    void handleCommand(const CommandResult& result);
-    void generateSaveLine();
-    void sendMessage(const String& msg);
+    /** Inicializa o serviço (ex: inicia SPI, WiFi.begin(), etc.) */
+    virtual bool begin() = 0;
 
-   private:
-    static SystemMediator* instancePtr;
-    SerialInterface* serialInterface;
+    /** Retorna true se o serviço está operacional */
+    virtual bool isReady() const = 0;
+
+    /** Retorna o nome identificador do serviço */
+    virtual const char* getName() const = 0;
+
+    /** Exibe status básico via serial */
+    virtual void printStatus() const = 0;
 };
