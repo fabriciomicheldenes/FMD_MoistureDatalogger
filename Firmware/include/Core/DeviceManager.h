@@ -61,6 +61,14 @@ class DeviceManager {
     static uint8_t getDeviceCount();
     static uint8_t getServiceCount();
     static void listDevices();
+    static SDCardRWController* getSDController() { return &sdController; }
+    static bool updateDevices() {
+        Serial.println(F("[DeviceManager] Atualizando dispositivos..."));
+        // if (!sdController.isReady())
+            sdController.updateSDCard();
+        // futuramente: wifi.update(), rtc.update(), etc.
+        return true;
+    }
 
    private:
     inline static SDCardRWController sdController{HardwarePins::CS_SDCARD};

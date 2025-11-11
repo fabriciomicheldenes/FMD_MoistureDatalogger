@@ -30,16 +30,16 @@
 
 /**
  * @brief Interface base para serviços de sistema (SDCard, WiFi, etc.)
- * 
+ *
  * Define métodos mínimos para inicialização e diagnóstico de periféricos
  * que não são sensores, mas que fornecem funcionalidades de suporte.
  */
 class ISystemService {
-public:
+   public:
     virtual ~ISystemService() = default;
 
     /** Inicializa o serviço (ex: inicia SPI, WiFi.begin(), etc.) */
-    virtual void begin() = 0;
+    virtual bool begin() = 0;
 
     /** Retorna true se o serviço está operacional */
     virtual bool isReady() const = 0;

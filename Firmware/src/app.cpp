@@ -33,9 +33,6 @@ HardwareSerial& serial = Serial;
 SerialInterface serialInterface(serial, 115200UL);
 SystemMediator systemMediator(&serialInterface);
 
-unsigned long lastSaveTime = 0;
-const unsigned long SAVE_INTERVAL = 5000;
-
 int main(void) {
     init();
 #if defined(USBCON)
@@ -61,6 +58,23 @@ void setup() {
     systemMediator.setInstance(&systemMediator);
 }
 
+struct Timer {
+    unsigned long last = 0;
+    unsigned long interval;
+    bool ready() {
+        unsigned long now = millis();
+        if (now - last >= interval) {
+            last = now;
+            return true;
+        }
+        return false;
+    }
+};
+
+// fora do loop
+Timer deviceTimer{0, 1000};
+Timer saveTimer{0, 5000};
+
 void loop() {
     if (serial.available()) {
         String cmd = Serial.readStringUntil('\n');
@@ -68,10 +82,6 @@ void loop() {
         serialInterface.handleCommand(cmd);
     }
 
-    unsigned long currentMillis = millis();
-    // Se já se passaram 5 segundos desde o último log
-    if (currentMillis - lastSaveTime >= SAVE_INTERVAL) {
-        lastSaveTime = currentMillis;
-        systemMediator.generateSaveLine();
-    }
+    if (deviceTimer.ready()) DeviceManager::updateDevices();
+    if (saveTimer.ready()) systemMediator.generateSaveLine();
 }

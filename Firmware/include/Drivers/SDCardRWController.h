@@ -36,7 +36,7 @@ class SDCardRWController : public ISystemService {
     explicit SDCardRWController(uint8_t csPin)
         : cs(csPin), initialized(false), lastErrorMsg("Not initialized") {}
 
-    void begin() override;
+    bool begin() override;
     bool isReady() const override { return initialized; }
     const char* getName() const override { return "SDCard"; }
     void printStatus() const override;
@@ -47,9 +47,16 @@ class SDCardRWController : public ISystemService {
     /** Retorna o texto da última falha */
     String lastError() const { return lastErrorMsg; }
 
+    bool isCardInserted() const;
+    void updateLedStatus(bool noCard, bool fail, bool ok);
+    void setupLedBlinkTimer();
+    void blinkStart();
+    void blinkEnd();
+    void updateSDCard();
+
    private:
     uint8_t cs;
-    bool initialized;
+    bool initialized = false;
     String filename = "log.csv";
     String lastErrorMsg;
 };

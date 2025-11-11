@@ -109,6 +109,10 @@ uint8_t DeviceManager::getDeviceCount() {
     return deviceCount;
 }
 
+uint8_t DeviceManager::getServiceCount() {
+    return serviceCount;
+}
+
 void DeviceManager::printAllStatus() {
     Serial.println(F("📊 STATUS DOS DISPOSITIVOS"));
 
@@ -146,3 +150,4 @@ void DeviceManager::listDevices() {
     }
     Serial.println();
 }
+
