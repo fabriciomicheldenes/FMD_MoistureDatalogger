@@ -45,11 +45,19 @@ void DeviceManager::begin() {
     Serial.println(F("🚀 INICIALIZANDO DISPOSITIVOS"));
 
     registerDevices();
+    registerServices();
 
     Serial.println(deviceCount);
     for (size_t i = 0; i < deviceCount; i++) {
         if (devices[i]) {
             devices[i]->begin();
+        }
+    }
+
+    Serial.println(serviceCount);
+    for (size_t i = 0; i < serviceCount; i++) {
+        if (services[i]) {
+            services[i]->begin();
         }
     }
 
@@ -101,6 +109,10 @@ uint8_t DeviceManager::getDeviceCount() {
     return deviceCount;
 }
 
+uint8_t DeviceManager::getServiceCount() {
+    return serviceCount;
+}
+
 void DeviceManager::printAllStatus() {
     Serial.println(F("📊 STATUS DOS DISPOSITIVOS"));
 
@@ -110,6 +122,19 @@ void DeviceManager::printAllStatus() {
         }
     }
     Serial.println();
+}
+
+void DeviceManager::registerServices() {
+    serviceCount = 0;
+    services[serviceCount++] = &sdController;
+}
+
+ISystemService* DeviceManager::getService(const char* name) {
+    for (uint8_t i = 0; i < serviceCount; ++i) {
+        if (strcmp(services[i]->getName(), name) == 0)
+            return services[i];
+    }
+    return nullptr;
 }
 
 void DeviceManager::listDevices() {
@@ -125,3 +150,4 @@ void DeviceManager::listDevices() {
     }
     Serial.println();
 }
+
