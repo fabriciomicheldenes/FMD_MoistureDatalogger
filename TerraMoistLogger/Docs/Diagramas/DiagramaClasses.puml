@@ -1,0 +1,85 @@
+@startuml
+title TerraMoistLogger – Arquitetura da GUI\nFabrício Michel Denes – 2025
+
+' ===================================================================
+'  PACOTES PRINCIPAIS
+' ===================================================================
+
+package "GUI" {
+    class MainWindow {
+        +MainWindow(QWidget*)
+        +openSerial()
+        +closeSerial()
+        +updateStatus()
+        +appendLogLine(QString)
+        -Console* console
+        -ConsoleManager* consoleManager
+    }
+
+    class Console {
+        +Console(QWidget*)
+        +appendData(QString)
+        +clear()
+        -QPlainTextEdit* view
+    }
+
+    class SettingsDialog {
+        +SettingsDialog(QWidget*)
+        +applySettings()
+        +selectedPort(): QString
+        +selectedBaud(): int
+    }
+}
+
+package "Core" {
+    class ConsoleManager {
+        +ConsoleManager(QObject*)
+        +open(QString port, int baud)
+        +close()
+        +isConnected(): bool
+        +writeData(QByteArray)
+        -handleReadyRead()
+        -handleError(QSerialPort::SerialPortError)
+        -QSerialPort serial
+        -signals:
+        .. dataReceived(QString)
+        .. statusChanged(bool)
+    }
+}
+
+package "QtFramework" {
+    interface QMainWindow
+    interface QWidget
+    interface QObject
+    interface QDialog
+    interface QSerialPort
+}
+
+package "UI Files (*.ui)" {
+    class mainwindow_ui <<ui>>
+    class console_ui <<ui>>
+    class settingsdialog_ui <<ui>>
+}
+
+' ===================================================================
+'  RELAÇÕES
+' ===================================================================
+
+MainWindow --> Console : usa
+MainWindow --> ConsoleManager : gerencia comunicação
+MainWindow -> SettingsDialog : abre configurações
+
+ConsoleManager --> QSerialPort : depende de
+ConsoleManager --> Console : envia dados recebidos (signal/slot)
+
+Console --> console_ui : renderiza
+MainWindow --> mainwindow_ui : renderiza
+SettingsDialog --> settingsdialog_ui : renderiza
+
+MainWindow -|> QMainWindow
+Console -|> QWidget
+SettingsDialog -|> QDialog
+
+ConsoleManager -|> QObject
+
+@enduml

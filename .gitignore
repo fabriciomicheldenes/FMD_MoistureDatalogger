@@ -131,7 +131,7 @@ RelWithDebInfo/
 *.idb
 *.ipch
 
-# IDE-specific files (e.g., Visual Studio, CLion, VS Code)
+# IDE-specific files (e.g., Visual Studio, CLion, VS Code, QtCreator)
 *.vs/
 *.vscode/
 Firmware/.vscode/
@@ -147,6 +147,8 @@ Firmware/.vscode/
 *.sdf
 *.opensdf
 ipch/
+*.qtc_clangd
+*.pro-user
 
 # CMake files
 CMakeCache.txt
